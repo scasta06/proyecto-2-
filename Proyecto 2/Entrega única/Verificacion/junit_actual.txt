@@ -1,0 +1,121 @@
+REV 1 OK - Persistencia conserva posesión de bebida
+REV 2 OK - Persistencia conserva sanciones pendientes y referencias de socios
+REV 3 OK - Persistencia conserva sugerencias pendientes
+REV 4 OK - Reportes filtran mensualidad por fecha de pago
+REV 5 OK - Persistencia y acceso del empleado
+REV 6 OK - Persistencia y acceso del fisioterapeuta
+REV 7 OK - Persistencia y acceso del administrador
+ESTADO RECUPERADO: sugerencias=1, socios=20, suspensión pendiente=true
+REV 8 OK - SD02: intermedio no juega contra principiante
+REV 9 OK - SD02: entrenador exento de compatibilidad de nivel
+REV 10 OK - SD02: administrador no juega
+REV 11 OK - Pádel: partido de dobles con cuatro socios
+REV 12 OK - Dobles rechaza jugadores repetidos
+REV 13 OK - SD04: solo entrenador responsable
+REV 14 OK - SD04: rechaza no convocado
+REV 15 OK - SD04: reemplaza asistencia sin duplicar
+REV 16 OK - Administrador: reporte de asistencia por periodo
+REV 17 OK - SD03: rechaza sesión superpuesta
+REV 18 OK - SD03: rechaza convocatoria vacía
+REV 19 OK - SD03: rechaza convocatoria repetida
+REV 20 OK - SD07: valida sanción antes de inscribir
+REV 21 OK - SD07: camiseta ocupada
+REV 22 OK - SD07: inscripción válida mantiene relación
+REV 23 OK - SD08: no registra estadísticas antes del resultado
+REV 24 OK - SD08: ganador debe coincidir con marcador
+REV 25 OK - SD08: rechaza valores negativos
+REV 26 OK - Ranking ELO usa la misma puntuación previa para ambos jugadores
+REV 27 OK - Estadísticas de raqueta conservan games y sets
+REV 28 OK - Administrador: historial de evolución de ranking
+REV 29 OK - Administrador: resultados de partidos por periodo
+REV 30 OK - Fútbol: roja suspende el siguiente partido interno
+REV 31 OK - Fútbol: suspendido no entra a la alineación
+REV 32 OK - Cancelar partido no cumple sanción
+REV 33 OK - Sanción se cumple al disputarse el siguiente partido
+REV 34 OK - Equipo dado de baja no disputa partidos
+REV 35 OK - Socio dado de baja no inicia sesión
+REV 36 OK - Baja de socio lo excluye de jugadores activos
+REV 37 OK - Socio sin código paga precio e IVA completos
+REV 38 OK - Fidelidad: 2 por ciento del valor pagado, un punto vale un peso
+REV 39 OK - Código compartido debe pertenecer a empleado
+REV 40 OK - Código aplica 8 por ciento, redime un peso por punto
+REV 41 OK - Puntos redimidos se descuentan y nueva compra acumula parte entera del 2 por ciento
+REV 42 OK - Empleado recibe descuento y también fidelidad
+REV 43 OK - Rechaza redención sin saldo
+REV 44 OK - Compra rechazada conserva saldo e inventario
+REV 45 OK - Tienda no admite propina
+REV 46 OK - SD09: informa ingredientes aunque no haya alérgenos
+REV 47 OK - SD09: cafetería cobra 8 por ciento y propina sin descuento de empleado
+REV 48 OK - Bebida caliente no se despacha a socio dentro de pádel
+REV 49 OK - Rechazo de bebida conserva stock
+REV 50 OK - Socio con bebida caliente no entra a pádel
+REV 51 OK - Socio con bebida caliente no entra a tenis de mesa techado
+REV 52 OK - Bebida fría sí se permite en la instalación
+REV 53 OK - Sugerencia pendiente no se vende
+REV 54 OK - Administrador aprueba sugerencia e incorpora producto
+REV 55 OK - Sugerencia no se resuelve dos veces
+REV 56 OK - SD06: reporte concilia con todos los importes cobrados
+REV 57 OK - SD06: informa periodo sin ventas
+REV 58 OK - SD01: pádel no admite sencillos
+REV 59 OK - SD01: tenis no admite tres jugadores
+REV 60 OK - SD01: mantenimiento bloquea reserva
+REV 61 OK - SD01: usa otra instalación si la primera está ocupada
+REV 62 OK - SD01: rechaza al agotar todas las instalaciones
+REV 63 OK - SD01: suspensión total produce ParticipacionException
+REV 64 OK - SD01: rechazos no crean reservas
+REV 65 OK - Sin empates en Baloncesto
+REV 66 OK - Puntos de clasificación en Baloncesto
+REV 67 OK - Estadísticas propias de Baloncesto
+REV 68 OK - Sin empates en Voleibol
+REV 69 OK - Voleibol rechaza puntos individuales como marcador de sets
+REV 70 OK - Puntos de clasificación en Voleibol
+REV 71 OK - Estadísticas propias de Voleibol
+REV 72 OK - HU-T09: derrota en voleibol otorga cero puntos
+REV 73 OK - Revalida sanción aunque el partido ya estuviera programado
+REV 74 OK - Rechazo de alineación no modifica resultado ni tabla
+REV 75 OK - Se puede corregir alineación y disputar el encuentro
+ESTADO DEPORTIVO: puntos del equipo=6, partidos=2
+REV 76 OK - SD11: nómina no alcanza mínimo
+REV 77 OK - SD11: nómina no permite duplicados
+REV 78 OK - Oficial: jugador ajeno a nómina no participa
+REV 79 OK - Liga: tabla incluye instituciones externas y puntos del club
+REV 80 OK - Competencia conserva estadísticas propias y escenario externo
+REV 81 OK - Fútbol oficial: acumula dos amarillas entre partidos
+REV 82 OK - Suspensión oficial excluye jugador del siguiente partido
+REV 83 OK - Suspensión oficial se cumple al disputar partido
+REV 84 OK - Resultado duplicado no suma puntos dos veces
+REV 85 OK - Tabla mantiene puntos tras rechazo de resultado duplicado
+REV 86 OK - SD11: verifica edad al inicio del torneo, no solo al entrar al equipo
+REV 87 OK - ASCUN: no avanza sin resultados de grupos
+REV 88 OK - ASCUN: no cruza grupos en primera fase
+REV 89 OK - Grupos: cambiar el id no permite repetir el mismo enfrentamiento
+REV 90 OK - Resultado de grupos rechazado no aumenta partidos jugados
+REV 91 OK - ASCUN: clasifica por puntos de grupos y cambia de fase
+REV 92 OK - ASCUN: no alinea equipo eliminado en grupos
+REV 93 OK - ASCUN: eliminación directa exige ganador
+REV 94 OK - ASCUN: derrota elimina al equipo
+REV 95 OK - SD05: detecta hueco de un minuto, no solo franjas de media hora
+REV 96 OK - HU-A12: rechazo registra estado y conserva turno original
+REV 97 OK - SD05: no permite identificador duplicado
+REV 98 OK - SD05: revisa también la fecha del turno que se elimina
+REV 99 OK - SD10: rechaza producto fuera del catálogo
+REV 100 OK - SD10: traslado no permite saldo negativo
+REV 101 OK - Traslado rechazado no crea existencias ni descuenta origen
+REV 102 OK - SD10: traslado conserva total y cambia ubicaciones
+REV 103 OK - SD10: rechaza reabastecimiento negativo
+REV 104 OK - Inventario controla desbordamiento
+
+Test run finished after 110 ms
+[         8 containers found      ]
+[         0 containers skipped    ]
+[         8 containers started    ]
+[         0 containers aborted    ]
+[         8 containers successful ]
+[         0 containers failed     ]
+[        64 tests found           ]
+[         0 tests skipped         ]
+[        64 tests started         ]
+[         0 tests aborted         ]
+[        64 tests successful      ]
+[         0 tests failed          ]
+

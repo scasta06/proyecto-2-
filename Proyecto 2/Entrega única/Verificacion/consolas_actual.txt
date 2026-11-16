@@ -1,0 +1,229 @@
+Login (0 para salir): Contraseña: 
+--- ADMINISTRADOR ---
+1. Consultar resumen de ventas
+2. Crear torneo
+3. Listar torneos
+4. Consultar detalle de un torneo
+5. Liberar cupos preferenciales
+6. Iniciar torneo
+7. Finalizar torneo
+8. Gestionar encuentros y resultados
+9. Entregar premios de torneo
+10. Registrar participante externo o universitario
+11. Administración del club
+0. Guardar y salir
+Opción: Código único: Nombre del torneo: 
+Deportes disponibles:
+1. Fútbol
+2. Baloncesto
+3. Voleibol
+4. Tenis
+5. Pádel
+6. Tenis de mesa
+Número del deporte: 
+Modalidad:
+1. Individual
+2. Dobles
+Seleccione: 
+Nivel:
+1. Principiante
+2. Intermedio
+3. Avanzado
+Seleccione: 
+Tipo de torneo:
+1. RECREATIVO
+2. COMPETITIVO
+Seleccione: Fecha inicial (AAAA-MM-DD): Fecha final (AAAA-MM-DD): Cantidad de cupos (jugadores, parejas o equipos): 
+Torneo registrado correctamente.
+
+--- DATOS DEL TORNEO ---
+Código: REC
+Nombre: Copa
+Deporte: Tenis
+Tipo: RECREATIVO
+Modalidad: INDIVIDUAL
+Estado: INSCRIPCIONES_ABIERTAS
+Nivel: Intermedio
+Inicio: 2026-11-25
+Fin: 2026-11-25
+Tarifa: 0.0
+Capacidad total: 5
+Capacidad reservada para preferenciales: 1
+Capacidad habilitada para regulares: 4
+Estas capacidades no descuentan las inscripciones.
+
+--- HISTORIAL DEL TORNEO ---
+REC - Copa
+Estado: INSCRIPCIONES_ABIERTAS
+
+Participaciones registradas:
+No hay inscripciones registradas.
+
+Encuentros en orden cronológico:
+No hay encuentros registrados.
+
+--- POSICIONES POR PUNTOS ---
+No hay participantes para clasificar.
+
+--- ADMINISTRADOR ---
+1. Consultar resumen de ventas
+2. Crear torneo
+3. Listar torneos
+4. Consultar detalle de un torneo
+5. Liberar cupos preferenciales
+6. Iniciar torneo
+7. Finalizar torneo
+8. Gestionar encuentros y resultados
+9. Entregar premios de torneo
+10. Registrar participante externo o universitario
+11. Administración del club
+0. Guardar y salir
+Opción: 
+Login (0 para salir): Contraseña: 1. Consultar resumen / 2. Consultar torneos / 3. Retirar inscripción / 9. Torneos y compras / 8. Otras operaciones / 0. Salir
+Opción: 1. Torneos / 2. Inscribirse / 3. Retirarse / 4. Bonos y premios / 5. Comprar / 0. Volver: REC | Copa | INSCRIPCIONES_ABIERTAS | inscritos: 0/5
+Código del torneo: Código único de inscripción: Nombre de la participación: Tarifa por inscripción: 0.0
+Confirmar inscripción y pago (SI): Inscripción confirmada.
+1. Torneos / 2. Inscribirse / 3. Retirarse / 4. Bonos y premios / 5. Comprar / 0. Volver: 1. Consultar resumen / 2. Consultar torneos / 3. Retirar inscripción / 9. Torneos y compras / 8. Otras operaciones / 0. Salir
+Opción: 
+Login (0 para salir): Contraseña: 1. Consultar resumen / 2. Consultar torneos / 3. Retirar inscripción / 9. Torneos y compras / 8. Otras operaciones / 0. Salir
+Opción: 1. Torneos / 2. Inscribirse / 3. Retirarse / 4. Bonos y premios / 5. Comprar / 0. Volver: REC | Copa | INSCRIPCIONES_ABIERTAS | inscritos: 1/5
+Código del torneo: Código único de inscripción: Nombre de la participación: Tarifa por inscripción: 0.0
+Confirmar inscripción y pago (SI): Inscripción confirmada.
+1. Torneos / 2. Inscribirse / 3. Retirarse / 4. Bonos y premios / 5. Comprar / 0. Volver: 1. Consultar resumen / 2. Consultar torneos / 3. Retirar inscripción / 9. Torneos y compras / 8. Otras operaciones / 0. Salir
+Opción: 
+Login (0 para salir): Contraseña: 
+--- ADMINISTRADOR ---
+1. Consultar resumen de ventas
+2. Crear torneo
+3. Listar torneos
+4. Consultar detalle de un torneo
+5. Liberar cupos preferenciales
+6. Iniciar torneo
+7. Finalizar torneo
+8. Gestionar encuentros y resultados
+9. Entregar premios de torneo
+10. Registrar participante externo o universitario
+11. Administración del club
+0. Guardar y salir
+Opción: 
+--- ENCUENTROS DE TORNEOS ---
+1. Programar encuentro
+2. Registrar victoria
+3. Registrar empate
+4. Consultar historial y posiciones
+0. Volver
+Opción: Código del torneo: 
+Inscripciones registradas:
+I1 | Socio 1
+I2 | Socio 2
+Código único del encuentro: Código de la primera inscripción: Código de la segunda inscripción: Fecha (AAAA-MM-DD): Hora (HH:mm, ejemplo 14:30): Encuentro programado correctamente.
+
+--- ENCUENTROS DE TORNEOS ---
+1. Programar encuentro
+2. Registrar victoria
+3. Registrar empate
+4. Consultar historial y posiciones
+0. Volver
+Opción: 
+--- ADMINISTRADOR ---
+1. Consultar resumen de ventas
+2. Crear torneo
+3. Listar torneos
+4. Consultar detalle de un torneo
+5. Liberar cupos preferenciales
+6. Iniciar torneo
+7. Finalizar torneo
+8. Gestionar encuentros y resultados
+9. Entregar premios de torneo
+10. Registrar participante externo o universitario
+11. Administración del club
+0. Guardar y salir
+Opción: Código del torneo: Torneo iniciado.
+
+--- ADMINISTRADOR ---
+1. Consultar resumen de ventas
+2. Crear torneo
+3. Listar torneos
+4. Consultar detalle de un torneo
+5. Liberar cupos preferenciales
+6. Iniciar torneo
+7. Finalizar torneo
+8. Gestionar encuentros y resultados
+9. Entregar premios de torneo
+10. Registrar participante externo o universitario
+11. Administración del club
+0. Guardar y salir
+Opción: 
+--- ENCUENTROS DE TORNEOS ---
+1. Programar encuentro
+2. Registrar victoria
+3. Registrar empate
+4. Consultar historial y posiciones
+0. Volver
+Opción: Código del torneo: Código del encuentro: I1: Socio 1
+I2: Socio 2
+Código de la inscripción ganadora: Resultado (ejemplo: 6-4, 6-3 o 2-1): Victoria registrada correctamente.
+
+--- ENCUENTROS DE TORNEOS ---
+1. Programar encuentro
+2. Registrar victoria
+3. Registrar empate
+4. Consultar historial y posiciones
+0. Volver
+Opción: 
+--- ADMINISTRADOR ---
+1. Consultar resumen de ventas
+2. Crear torneo
+3. Listar torneos
+4. Consultar detalle de un torneo
+5. Liberar cupos preferenciales
+6. Iniciar torneo
+7. Finalizar torneo
+8. Gestionar encuentros y resultados
+9. Entregar premios de torneo
+10. Registrar participante externo o universitario
+11. Administración del club
+0. Guardar y salir
+Opción: Código del torneo: Torneo finalizado.
+
+--- ADMINISTRADOR ---
+1. Consultar resumen de ventas
+2. Crear torneo
+3. Listar torneos
+4. Consultar detalle de un torneo
+5. Liberar cupos preferenciales
+6. Iniciar torneo
+7. Finalizar torneo
+8. Gestionar encuentros y resultados
+9. Entregar premios de torneo
+10. Registrar participante externo o universitario
+11. Administración del club
+0. Guardar y salir
+Opción: Código del torneo: Porcentaje del bono: Premios registrados.
+
+--- ADMINISTRADOR ---
+1. Consultar resumen de ventas
+2. Crear torneo
+3. Listar torneos
+4. Consultar detalle de un torneo
+5. Liberar cupos preferenciales
+6. Iniciar torneo
+7. Finalizar torneo
+8. Gestionar encuentros y resultados
+9. Entregar premios de torneo
+10. Registrar participante externo o universitario
+11. Administración del club
+0. Guardar y salir
+Opción: 
+Login (0 para salir): Contraseña: 1. Consultar resumen / 2. Consultar torneos / 3. Retirar inscripción / 9. Torneos y compras / 8. Otras operaciones / 0. Salir
+Opción: 1. Torneos / 2. Inscribirse / 3. Retirarse / 4. Bonos y premios / 5. Comprar / 0. Volver: 1. Tienda / 2. Cafetería: BAL | Balón | precio: 100000.0 | stock: 10
+Producto (0 para terminar): Cantidad: Producto (0 para terminar): Código de bono (vacío para ninguno): Subtotal: 100000.0 | descuento: 10000.0 | impuesto: 17100.0
+Confirmar compra (SI): Compra V000001 | total: 107100.0 | puntos ganados: 2142
+1. Torneos / 2. Inscribirse / 3. Retirarse / 4. Bonos y premios / 5. Comprar / 0. Volver: 1. Consultar resumen / 2. Consultar torneos / 3. Retirar inscripción / 9. Torneos y compras / 8. Otras operaciones / 0. Salir
+Opción: 
+Login (0 para salir): Contraseña: 1. Consultar resumen / 9. Torneos y compras / 8. Otras operaciones / 0. Salir
+Opción: 1. Mis turnos / 2. Solicitar cambio / 3. Mis solicitudes / 4. Sugerir producto / 5. Código de descuento
+Operación (0 para volver): F1 | 2026-11-16 06:00-22:00
+1. Mis turnos / 2. Solicitar cambio / 3. Mis solicitudes / 4. Sugerir producto / 5. Código de descuento
+Operación (0 para volver): 1. Consultar resumen / 9. Torneos y compras / 8. Otras operaciones / 0. Salir
+Opción: 

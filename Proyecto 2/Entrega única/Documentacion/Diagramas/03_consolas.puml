@@ -1,0 +1,33 @@
+@startuml
+title Aplicaciones y persistencia
+skinparam classAttributeIconSize 0
+class "Aplicaciones por rol" as C0 {
+Administrador / Socio / Empleado
+main(String[])
+}
+class "ConsolaPrincipal" as C1 {
+autenticación y selección del rol
+carga y guardado automático
+}
+class "Consolas por rol" as C2 {
+Administrador / Socio
+Entrenador / Fisioterapeuta
+}
+class "ConsolaOperaciones" as C3 {
+operaciones deportivas y laborales
+operaciones administrativas
+}
+class "ConsolaParticipacion" as C4 {
+inscripciones, retiros y compras
+bonos y premios
+}
+class "PersistenciaJson" as C5 {
+cargar(ruta), salvar(club, ruta)
+serialización de objetos
+}
+C0 --> C1 : inicia
+C1 --> C2 : selecciona
+C2 --> C3 : abre
+C2 --> C4 : abre
+C1 --> C5 : usa
+@enduml

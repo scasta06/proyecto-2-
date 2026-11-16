@@ -1,0 +1,838 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+class AplicacionAdministrador {
+}
+class AplicacionEmpleado {
+}
+class AplicacionSocio {
+}
+class ConsolaAdministrador {
+  +mostrarMenu()
+}
+ConsolaBase <|-- ConsolaAdministrador
+class ConsolaBase {
+  +mostrarMenu()
+}
+class ConsolaEncuentros {
+  +mostrarMenu()
+}
+ConsolaBase <|-- ConsolaEncuentros
+class ConsolaEntrenador {
+  +mostrarMenu()
+}
+ConsolaBase <|-- ConsolaEntrenador
+class ConsolaFisioterapeuta {
+  +mostrarMenu()
+}
+ConsolaBase <|-- ConsolaFisioterapeuta
+class ConsolaOperaciones {
+  +mostrarMenu()
+}
+ConsolaBase <|-- ConsolaOperaciones
+class ConsolaParticipacion {
+  +mostrarMenu()
+}
+ConsolaBase <|-- ConsolaParticipacion
+class ConsolaPrincipal {
+  +iniciar(String rol)
+}
+class ConsolaSocio {
+  +mostrarMenu()
+}
+ConsolaBase <|-- ConsolaSocio
+class VistaHistorialTorneo {
+  +mostrar(Torneo torneo)
+}
+class ClubException {
+}
+Exception <|-- ClubException
+class InscripcionException {
+}
+ClubException <|-- InscripcionException
+class InventarioException {
+}
+ClubException <|-- InventarioException
+class ParticipacionException {
+}
+ClubException <|-- ParticipacionException
+class ReservaException {
+}
+ClubException <|-- ReservaException
+class TurnoException {
+}
+ClubException <|-- TurnoException
+class VentaException {
+}
+ClubException <|-- VentaException
+class ClubDeportivo {
+  +iniciarSesion(String login,String clave)
+  +getGestorUsuarios()
+  +getGestorInstalaciones()
+  +getGestorDeportivo()
+  +getGestorCompetencias()
+  +getGestorComercio()
+  +getGestorPersonal()
+  +getGestorReportes()
+  +getNombre()
+  +getGestorTorneos()
+}
+class GestorComercio {
+  +getTienda()
+  +getCafeteria()
+  +getProductos()
+  +registrarProducto(Producto p)
+  +iniciarVenta(PuntoVenta pv,Persona comprador)
+  +agregarProducto(Venta v,Producto p,int cant)
+  +consultarIngredientes(Snack s)
+  +finalizarVenta(Venta v,double propina,int puntos)
+  +registrarMensualidad(Socio s,YearMonth periodo,ConceptoMensualidad c,double valor)
+  +buscarSnacksConAlergeno(Alergeno a)
+  +getVentas(LocalDate ini,LocalDate fin)
+  +getMensualidades(LocalDate ini,LocalDate fin)
+  +getInventario()
+  +aplicarCodigoDescuento(Venta venta, String codigo)
+  +sugerirProducto(Empleado autor, Producto producto)
+  +resolverSugerencia(SugerenciaProducto sugerencia, Administrador admin, boolean aprobar)
+  +resolverSugerencia(SugerenciaProducto sugerencia, Administrador admin, boolean aprobar, String motivo)
+  +getSugerencias()
+}
+class GestorCompetencias {
+  +registrarCompetencia(Competencia c)
+  +getCompetencias()
+  +inscribirEquipo(Competencia c,Equipo e,List<Socio> nomina)
+  +inscribirIndividual(Competencia c,Socio s)
+  +programarPartido(Competencia c,InscripcionCompetencia i,String rival,LocalDate f,LocalTime ini,boolean local)
+  +registrarResultado(PartidoOficial p,int propio,int rival)
+  +consultarTabla(Competencia c)
+  +registrarRival(Competencia competencia, String institucion, String grupo)
+  +registrarResultadoExterno(Competencia competencia, String id, String local, String visitante, int propio, int rival)
+}
+class GestorDeportivo {
+  +registrarDeporte(Deporte d)
+  +crearEquipo(Equipo e)
+  +registrarAcademia(Academia a)
+  +getDeportes()
+  +getEquipos()
+  +getAcademias()
+  +getSesiones()
+  +getPartidosPractica()
+  +inscribirEnEquipo(Socio s,Equipo e,String pos,int numero)
+  +inscribirEnAcademia(Socio s,Academia a)
+  +programarEntrenamiento(Entrenador en,LocalDate f,LocalTime ini,int dur,Instalacion i,List<Socio> conv)
+  +registrarAsistencia(Entrenador en,SesionEntrenamiento se,Socio s,EstadoAsistencia e,Integer nota,String com)
+  +programarPartidoPractica(Socio sol,Persona rival,Deporte d,LocalDate f,LocalTime ini)
+  +registrarEstadistica(Entrenador en,Partido p,Socio j,Map<String,Integer> v)
+  +consultarRanking(Deporte d)
+  +configurarCompetencias(GestorCompetencias competencias)
+  +retirarJugador(Equipo equipo, Socio socio)
+  +darDeBajaEquipo(Equipo equipo)
+  +programarPartidoInterno(Equipo local, Equipo visitante, LocalDate fecha, LocalTime hora)
+  +getPartidosInternos()
+  +programarDobles(List<Socio> propios, List<Socio> rivales, Deporte deporte, LocalDate fecha, LocalTime hora)
+}
+class GestorInstalaciones {
+  +registrarInstalacion(Instalacion i)
+  +getInstalaciones()
+  +getReservas()
+  +buscarDisponible(Deporte d,LocalDate f,LocalTime ini,int dur,int n)
+  +reservar(Socio s,Deporte d,LocalDate f,LocalTime ini,int dur,int n,ModalidadReserva m)
+  +cancelarReserva(Reserva r)
+  +consultarDisponibilidad(Deporte d,LocalDate f)
+  +ingresar(Socio socio, Instalacion instalacion)
+  +salir(Socio socio)
+}
+class GestorPersonal {
+  +asignarTurno(Turno t)
+  +solicitarCambio(Empleado e,Turno actual,Turno propuesto,String motivo)
+  +aprobarCambio(SolicitudCambioTurno s,Administrador a)
+  +rechazarCambio(SolicitudCambioTurno s,Administrador a,String obs)
+  +coberturaMinimaCumplida(List<Turno> lista,LocalDate f)
+  +getTurnos()
+  +getSolicitudes()
+}
+class GestorReportes {
+  +generarReporteVentas(LocalDate ini,LocalDate fin)
+  +configurarDeportivo(GestorDeportivo deportivo, GestorCompetencias competencias)
+  +consultarAsistencia(Socio socio, LocalDate inicio, LocalDate fin)
+  +consultarResultados(LocalDate inicio, LocalDate fin)
+}
+class GestorTorneos {
+  +configurarClub(ClubDeportivo club)
+  +registrarTorneo(Torneo torneo)
+  +buscarTorneo(String codigo)
+  +getTorneos()
+  +liberarCuposPreferenciales(String codigo)
+  +iniciarTorneo(String codigo)
+  +finalizarTorneo(String codigo)
+  +consultarBonos(modelo.personas.Persona persona)
+  +entregarBonos(String codigo, double porcentaje)
+  +inscribir(ClubDeportivo club, String codigo, String id, String nombre, List<modelo.personas.Persona> participantes, modelo.deportes.Equipo equipo)
+  +consultarRecaudo(String codigo)
+  +entregarPremiosDinero(String codigo)
+  +consultarPremiosDinero(String codigo)
+}
+class GestorUsuarios {
+  +autenticar(String login,String clave)
+  +registrarExterno(modelo.personas.ParticipanteExterno persona)
+  +buscarPersona(String documento)
+  +registrarSocio(Socio s)
+  +registrarEmpleado(Empleado e)
+  +buscarSocio(String d)
+  +getEntrenadores()
+  +getFisioterapeutas()
+  +sancionar(Socio s,String motivo,TipoSancion t,LocalDate ini,LocalDate fin,Deporte d)
+  +getPersonas()
+  +darDeBajaSocio(String documento)
+}
+class ReporteVentas {
+  +agregar(Rubro r,YearMonth mes,double valor)
+  +getTotal()
+  +estaVacio()
+  +getTotalesPorRubro()
+  +getTotalesPorMes()
+  +getTransacciones()
+}
+class Estadistica {
+  +getValores()
+  +calcularPuntosRanking()
+  +getJugador()
+  +getPartido()
+}
+class EstadisticaBaloncesto {
+  +calcularPuntosRanking()
+}
+Estadistica <|-- EstadisticaBaloncesto
+class EstadisticaFutbol {
+  +calcularPuntosRanking()
+}
+Estadistica <|-- EstadisticaFutbol
+class EstadisticaIndividual {
+  +calcularPuntosRanking()
+  +setCambioRanking(int cambio)
+}
+Estadistica <|-- EstadisticaIndividual
+class EstadisticaVoleibol {
+  +calcularPuntosRanking()
+}
+Estadistica <|-- EstadisticaVoleibol
+class Evento {
+  +getHoraFin()
+  +seTraslapaCon(LocalDate f,LocalTime ini,LocalTime fin)
+  +bloqueaInstalacion()
+  +getId()
+  +getFecha()
+  +getHoraInicio()
+  +getInstalacion()
+}
+class Instalacion {
+  +estaDisponible(LocalDate f,LocalTime ini,LocalTime fin)
+  +admiteCantidad(int n)
+  +agregarOcupacion(Evento e)
+  +liberar(Evento e)
+  +getDeporte()
+  +getCodigo()
+  +getNombre()
+  +setEnMantenimiento(boolean v)
+  +isEnMantenimiento()
+  +getHoraApertura()
+  +getHoraCierre()
+  +getOcupaciones()
+  +setTechada(boolean valor)
+  +restringeBebidaCaliente()
+}
+class Partido {
+  +agregarParticipante(Socio s)
+  +participo(Socio s)
+  +registrarResultado(int propio,int rival)
+  +getResultado()
+  +agregarEstadistica(Estadistica e)
+  +getDeporte()
+  +bloqueaInstalacion()
+  +getEstado()
+  +getParticipantes()
+  +getEstadisticas()
+  +getMarcadorPropio()
+  +getMarcadorRival()
+  +cancelar()
+  +registrarTarjetas(Socio socio, int amarillas, int rojas)
+  +quitarParticipante(Socio socio)
+}
+Evento <|-- Partido
+class PartidoInterno {
+  +getLocal()
+  +getVisitante()
+  +getEquipoDe(Socio socio)
+  +getDeporte()
+  +agregarParticipante(Socio socio)
+  +registrarTarjetas(Socio socio, int amarillas, int rojas)
+}
+Partido <|-- PartidoInterno
+class PartidoOficial {
+  +agregarParticipante(Socio s)
+  +getPuntosObtenidos()
+  +getDeporte()
+  +getInscripcion()
+  +getCompetencia()
+  +getFase()
+  +setFase(String f)
+  +getRival()
+  +registrarTarjetas(Socio socio, int amarillas, int rojas)
+  +isEsLocal()
+  +getEscenario()
+  +setEscenario(String nombre)
+}
+Partido <|-- PartidoOficial
+class PartidoPractica {
+  +agregarParticipante(Socio socio)
+  +quitarParticipante(Socio socio)
+  +incluyeEntrenador()
+  +getDeporte()
+  +isNivelesVerificados()
+  +gano(Socio socio)
+  +cambioRanking(Socio jugador, Ranking ranking)
+}
+Partido <|-- PartidoPractica
+class RegistroAsistencia {
+  +tieneNota()
+  +getJugador()
+  +getEstado()
+  +getNotaDesempeno()
+  +getComentario()
+}
+class Reserva {
+  +cancelar()
+  +bloqueaInstalacion()
+  +getSocio()
+  +getEstado()
+  +getCantidadJugadores()
+  +getModalidad()
+}
+Evento <|-- Reserva
+class SesionEntrenamiento {
+  +estaConvocado(Socio s)
+  +registrarAsistencia(Socio s,EstadoAsistencia e,Integer nota,String com)
+  +bloqueaInstalacion()
+  +getEntrenador()
+  +getConvocados()
+  +getRegistros()
+  +cancelar()
+  +setObjetivo(String o)
+}
+Evento <|-- SesionEntrenamiento
+class Alergeno {
+  +getNombre()
+  +getDescripcion()
+}
+class ArticuloDeportivo {
+  +getRubro()
+  +getMarca()
+  +getTalla()
+  +getCategoria()
+  +setCategoria(String categoria)
+}
+Producto <|-- ArticuloDeportivo
+class Bebida {
+  +isCaliente()
+  +getRubro()
+}
+Producto <|-- Bebida
+class BonoTorneo {
+  +getCodigo()
+  +getPropietario()
+  +getPorcentaje()
+  +isUsado()
+  +getVenta()
+  +validarUso(Persona comprador)
+  +consumir(Venta compra)
+}
+class Cafeteria {
+  +admiteProducto(Producto p)
+  +calcularDescuento(Persona c,double s)
+  +calcularImpuesto(double b)
+  +admitePropina()
+  +sugerirPropina(double s)
+}
+PuntoVenta <|-- Cafeteria
+class CuentaFidelizacion {
+  +acumular(double pago)
+  +puedeRedimir(int p)
+  +redimir(int p)
+  +getPuntos()
+}
+class Ingrediente {
+  +getNombre()
+  +getAlergenos()
+}
+class ItemVenta {
+  +getSubtotal()
+  +getProducto()
+  +getCantidad()
+}
+class Mensualidad {
+  +getRubro()
+  +getSocio()
+  +getPeriodo()
+  +getConcepto()
+  +getValor()
+  +getFechaPago()
+}
+class Producto {
+  +getRubro()
+  +getCodigo()
+  +getNombre()
+  +getPrecio()
+}
+class PuntoVenta {
+  +admiteProducto(Producto p)
+  +calcularDescuento(Persona c,double subtotal)
+  +calcularImpuesto(double base)
+  +admitePropina()
+  +registrarVenta(Venta v)
+  +getUbicacion()
+  +getVentas()
+  +getNombre()
+}
+class Snack {
+  +getRubro()
+  +getIngredientes()
+  +getAlergenos()
+  +contieneAlergeno(Alergeno a)
+}
+Producto <|-- Snack
+class SugerenciaProducto {
+  +getObservacion()
+  +resolver(Administrador admin, boolean aprobar, String motivo)
+  +getProducto()
+  +getAutor()
+  +getEstado()
+  +getRevisadaPor()
+  +resolver(Administrador admin, boolean aprobar)
+}
+class Tienda {
+  +admiteProducto(Producto p)
+  +calcularDescuento(Persona c,double s)
+  +calcularImpuesto(double b)
+  +admitePropina()
+}
+PuntoVenta <|-- Tienda
+class Venta {
+  +agregarItem(Producto p,int cantidad)
+  +requiereInfoAlergenos()
+  +marcarAlergenosInformados()
+  +calcularTotales(PuntoVenta pv)
+  +aplicarPropina(double v)
+  +redimirPuntos(int p,double valor)
+  +getBaseFidelizacion()
+  +cerrar()
+  +isAlergenosInformados()
+  +isCerrada()
+  +getComprador()
+  +getPuntoVenta()
+  +getItems()
+  +getFechaHora()
+  +getTotalPagado()
+  +getSubtotal()
+  +getDescuento()
+  +getImpuesto()
+  +getPropina()
+  +getPuntosGanados()
+  +setPuntosGanados(int n)
+  +getNumero()
+  +aplicarCodigoCompartido()
+  +aplicarCodigoEmpleado(modelo.personas.Empleado titular)
+  +getPuntosRedimidos()
+  +getValorRedimido()
+  +getBono()
+  +aplicarBono(BonoTorneo bono)
+}
+class Competencia {
+  +inscripcionesAbiertas(LocalDate f)
+  +puntosPor(Resultado r)
+  +agregarInscripcion(InscripcionCompetencia i)
+  +agregarPartido(PartidoOficial p)
+  +getTablaPosiciones()
+  +compare(InscripcionCompetencia primera, InscripcionCompetencia segunda)
+  +getDeporte()
+  +getCategoria()
+  +getFormato()
+  +getFechaInicio()
+  +getFechaFin()
+  +getInscripciones()
+  +getPartidos()
+  +getEstado()
+  +getCodigo()
+  +finalizar()
+  +getLimiteAmarillas()
+  +setLimiteAmarillas(int limite)
+  +getRanking()
+  +nombreDe(InscripcionCompetencia inscripcion)
+  +registrarParticipante(String nombre, String grupo)
+  +asignarGrupo(String nombre, String grupo)
+  +tieneParticipante(String nombre)
+  +getFaseActual()
+  +validarEnfrentamiento(String propio, String rival)
+  +validarMarcador(int propio, int rival)
+  +puntosMarcador(int propio, int rival)
+  +contabilizar(String id, String propio, String rival, int a, int b)
+  +getClasificacionCompleta()
+  +compare(PosicionCompetencia a, PosicionCompetencia b)
+  +iniciarEliminacion(int porGrupo)
+  +validarResultadoNuevo(String id, String propio, String rival, int a, int b)
+}
+class EntradaRanking {
+  +acumular(Estadistica e)
+  +getJugador()
+  +getPartidosJugados()
+  +getPuntosRanking()
+  +getAcumulados()
+  +getHistorialPuntos()
+}
+class InscripcionCompetencia {
+  +estaEnNomina(Socio s)
+  +sumarPuntos(int p)
+  +getPuntosAcumulados()
+  +getPartidosJugados()
+  +getEquipo()
+  +getJugador()
+  +getCompetencia()
+  +getNomina()
+  +isEliminada()
+  +eliminar()
+}
+class PosicionCompetencia {
+  +getNombre()
+  +getGrupo()
+  +getPuntos()
+  +getJugados()
+  +getDiferencia()
+  +isEliminada()
+}
+class Ranking {
+  +actualizar(Estadistica e)
+  +getEntrada(Socio s)
+  +getPosiciones()
+  +compare(EntradaRanking primera, EntradaRanking segunda)
+}
+class Academia {
+  +tieneCupo()
+  +admiteNivel(int n)
+  +inscribir(Socio s,LocalDate f)
+  +getDeporte()
+  +getNombre()
+  +getValorMensualidad()
+  +getEntrenador()
+}
+class Deporte {
+  +cantidadReservaValida(int n)
+  +nominaValida(int n)
+  +esPosicionValida(String p)
+  +nivelesCompatibles(int a,int b)
+  +crearEstadistica(Socio j,Partido p,Map<String,Integer> v)
+  +getNombre()
+  +isEsDeConjunto()
+  +getJugadoresEnCampo()
+  +getDuracionPartidoMin()
+  +isPermiteEmpate()
+  +getTipoEstadistica()
+  +esPadel()
+  +esTenisMesa()
+}
+class Equipo {
+  +getInscripciones()
+  +retirarJugador(Socio socio)
+  +tieneCupo()
+  +esIntegrante(Socio s)
+  +inscribir(Socio s,String pos,int num,LocalDate f)
+  +getJugadoresActivos()
+  +getDeporte()
+  +getCategoria()
+  +getNombre()
+  +getEntrenador()
+  +isActivo()
+  +darDeBaja()
+  +validarOrdenPartido(String circuito, LocalDateTime fecha)
+  +registrarPartidoDisputado(String circuito, LocalDateTime fecha)
+  +validarFechaEstadisticas(String circuito, LocalDateTime fecha)
+  +suspendidoPorTarjetas(Socio socio, String circuito)
+  +registrarTarjetas(Socio socio, String circuito, int amarillasPartido, int rojas, int limite)
+  +cumplirSuspensiones(String circuito)
+}
+class InscripcionAcademia {
+  +retirar()
+  +isActiva()
+  +getAlumno()
+  +getAcademia()
+  +getFechaInscripcion()
+}
+class InscripcionEquipo {
+  +retirar()
+  +isActiva()
+  +getJugador()
+  +getEquipo()
+  +getNumeroCamiseta()
+  +getPosicion()
+  +getFechaInscripcion()
+}
+class Existencia {
+  +aumentar(int n)
+  +disminuir(int n)
+  +estaBajoMinimo()
+  +getCantidad()
+  +getProducto()
+  +getUbicacion()
+  +setStockMinimo(int n)
+}
+class Inventario {
+  +estaRegistrado(Producto p)
+  +getCantidad(Producto p,Ubicacion u)
+  +consultar(Ubicacion u)
+  +obtenerExistencia(Producto p,Ubicacion u)
+  +reabastecer(Producto p,Ubicacion u,int n,Administrador a)
+  +trasladar(Producto p,Ubicacion o,Ubicacion d,int n,Administrador a)
+  +descontar(Producto p,Ubicacion u,int n)
+  +getMovimientos()
+}
+class MovimientoInventario {
+  +aplicar(Inventario inv)
+}
+class Reabastecimiento {
+  +aplicar(Inventario inv)
+}
+MovimientoInventario <|-- Reabastecimiento
+class Traslado {
+  +aplicar(Inventario inv)
+}
+MovimientoInventario <|-- Traslado
+class Ubicacion {
+  +getCodigo()
+  +getNombre()
+  +getTipo()
+}
+class SolicitudCambioTurno {
+  +aprobar(Administrador a,LocalDate f)
+  +rechazar(Administrador a,String obs,LocalDate f)
+  +getMotivo()
+  +getObservacion()
+  +getFechaSolicitud()
+  +getFechaRespuesta()
+  +getRevisadaPor()
+  +getTurnoActual()
+  +getTurnoPropuesto()
+  +getSolicitante()
+  +getEstado()
+}
+class Turno {
+  +cubre(LocalDate f,LocalTime h)
+  +seTraslapaCon(Turno otro)
+  +getFecha()
+  +getHoraInicio()
+  +getHoraFin()
+  +getEmpleado()
+  +getId()
+}
+class Administrador {
+  +getTipo()
+  +getCargo()
+}
+Empleado <|-- Administrador
+class Empleado {
+  +getTipo()
+  +getCodigoEmpleado()
+  +getFechaContratacion()
+  +getCodigoDescuento()
+  +getCuenta()
+}
+Persona <|-- Empleado
+class Entrenador {
+  +getTipo()
+  +getLicencia()
+  +agregarEspecialidad(Deporte d)
+  +puedeEntrenar(Deporte d)
+  +getEspecialidades()
+}
+Empleado <|-- Entrenador
+class Fisioterapeuta {
+  +getTipo()
+  +getTarjetaProfesional()
+}
+Empleado <|-- Fisioterapeuta
+class NivelDeportivo {
+  +diferenciaCon(NivelDeportivo otro)
+  +getNivel()
+  +getFechaActualizacion()
+}
+class ParticipanteExterno {
+  +getTipo()
+  +getCuenta()
+  +asignarNivel(Deporte deporte, int nivel)
+  +getNivel(Deporte deporte)
+}
+Persona <|-- ParticipanteExterno
+class Persona {
+  +getEdad(LocalDate fecha)
+  +verificarContrasena(String clave)
+  +getTipo()
+  +getDocumento()
+  +getNombre()
+  +getLogin()
+  +getFechaNacimiento()
+  +getTelefono()
+  +getCorreo()
+  +actualizarContacto(String tel,String mail)
+}
+class Sancion {
+  +estaVigente(LocalDate f)
+  +aplicaA(Deporte d)
+  +getSocio()
+  +getMotivo()
+}
+class Socio {
+  +getNivel(Deporte d)
+  +asignarNivel(Deporte d,int nivel)
+  +estaSuspendido(Deporte d,LocalDate fecha)
+  +agregarSancion(Sancion s)
+  +getCuenta()
+  +getTipo()
+  +isActivo()
+  +darDeBaja()
+  +getNumeroSocio()
+  +getFechaAfiliacion()
+  +getSanciones()
+  +tieneBebidaCaliente()
+  +getInstalacionActual()
+  +recibirBebidaCaliente()
+  +terminarBebida()
+  +entrarInstalacion(Instalacion instalacion)
+  +salirInstalacion()
+}
+Persona <|-- Socio
+enum Categoria {
+  +getEdadMinima()
+  +getEdadMaxima()
+  +paraEdad(int edad)
+}
+enum ConceptoMensualidad {
+}
+enum EstadoAsistencia {
+}
+enum EstadoCompetencia {
+}
+enum EstadoPartido {
+}
+enum EstadoReserva {
+}
+enum EstadoSolicitud {
+}
+enum FormatoCompetencia {
+}
+enum ModalidadReserva {
+}
+enum Resultado {
+}
+enum Rubro {
+}
+enum TipoEstadistica {
+}
+enum TipoSancion {
+}
+enum TipoUbicacion {
+}
+class EncuentroTorneo {
+  +registrarVictoria(String codigoGanador, String detalleResultado)
+  +registrarEmpate(String detalleResultado)
+  +getCodigo()
+  +getCodigoInscripcionA()
+  +getCodigoInscripcionB()
+  +getFechaHora()
+  +getEstado()
+  +getResultado()
+  +getCodigoInscripcionGanadora()
+  +isEmpate()
+}
+enum EstadoEncuentro {
+}
+enum EstadoTorneo {
+}
+class HistorialTorneo {
+  +getInscripcionesRetiradas()
+  +registrarInscripcionConfirmada(InscripcionTorneo inscripcion)
+  +retirarInscripcion(String codigo, Persona solicitante)
+  +buscarInscripcion(String codigo)
+  +agregarEncuentro(EncuentroTorneo encuentro)
+  +buscarEncuentro(String codigo)
+  +registrarVictoria(String codigoEncuentro, String codigoGanador, String resultado)
+  +registrarEmpate(String codigoEncuentro, String resultado)
+  +getInscripciones()
+  +getEncuentros()
+  +tieneEncuentrosPendientes()
+}
+class InscripcionTorneo {
+  +isPreferencial()
+  +getValorPagado()
+  +registrarPago(double valor, boolean prioridad)
+  +getCodigo()
+  +getCodigoTorneo()
+  +getNombreParticipacion()
+  +getModalidad()
+  +getParticipantes()
+  +getEquipo()
+  +getFechaInscripcion()
+}
+enum ModalidadTorneo {
+}
+class TablaPosicionesTorneo {
+  +calcular(Torneo torneo)
+  +getCodigo()
+  +getNombre()
+  +getPosicion()
+  +getJugados()
+  +getGanados()
+  +getEmpatados()
+  +getPerdidos()
+  +getPuntos()
+}
+enum TipoTorneo {
+}
+class Torneo {
+  +getCodigo()
+  +getNombre()
+  +getDeporte()
+  +getCategoria()
+  +getNivel()
+  +getTipo()
+  +getModalidad()
+  +getEstado()
+  +getFechaInicio()
+  +getFechaFin()
+  +getCuposTotales()
+  +getTarifaInscripcion()
+  +getCuposPreferencialesIniciales()
+  +isCuposPreferencialesLiberados()
+  +getCuposReservadosParaPreferenciales()
+  +getCuposHabilitadosParaRegulares()
+  +liberarCuposPreferenciales()
+  +iniciar()
+  +finalizar()
+  +getHistorial()
+}
+class DatosIniciales {
+  +crear()
+}
+interface IPersistenciaClub {
+}
+class PersistenciaJson {
+  +salvar(ClubDeportivo club, String ruta)
+  +cargar(String ruta)
+}
+ClubDeportivo --> GestorTorneos
+GestorTorneos --> Torneo
+Torneo *-- HistorialTorneo
+HistorialTorneo o-- InscripcionTorneo
+HistorialTorneo o-- EncuentroTorneo
+InscripcionTorneo --> Persona
+InscripcionTorneo --> Equipo
+GestorTorneos --> BonoTorneo
+Venta --> BonoTorneo
+BonoTorneo --> Persona
+@enduml

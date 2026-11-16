@@ -1,0 +1,30 @@
+@startuml
+title Premios y compras
+skinparam classAttributeIconSize 0
+class "GestorTorneos" as C0 {
+bonos y premios monetarios
+}
+class "BonoTorneo" as C1 {
+propietario, porcentaje, venta
+validarUso(), consumir()
+}
+class "Persona" as C2 {
+documento, nombre, credenciales
+}
+class "GestorComercio" as C3 {
+iniciarVenta(), finalizarVenta()
+}
+class "Venta" as C4 {
+bono, items, descuentos, impuestos
+aplicarBono(), calcularTotales()
+}
+class "CuentaFidelizacion" as C5 {
+puntos
+acumular(), redimir()
+}
+C0 --> C1 : entrega
+C1 --> C2 : propietario
+C3 --> C4 : gestiona
+C4 --> C1 : 0..1 bono
+C3 --> C5 : actualiza
+@enduml

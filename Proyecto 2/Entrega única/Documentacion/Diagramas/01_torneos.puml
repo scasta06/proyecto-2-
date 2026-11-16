@@ -1,0 +1,33 @@
+@startuml
+title Torneos e inscripciones
+skinparam classAttributeIconSize 0
+class "ClubDeportivo" as C0 {
+getGestorTorneos()
+}
+class "GestorTorneos" as C1 {
+inscribir(...)
+entregarBonos(...)
+entregarPremiosDinero(...)
+}
+class "Torneo" as C2 {
+tipo, modalidad, fechas, cupos
+getHistorial()
+}
+class "HistorialTorneo" as C3 {
+inscripciones, retiradas, encuentros
+retirarInscripcion(...)
+}
+class "InscripcionTorneo" as C4 {
+participantes, equipo, valorPagado
+preferencial
+}
+class "EncuentroTorneo" as C5 {
+fechaHora, estado, resultado
+registrarVictoria(...)
+}
+C0 --> C1 : 1 → 1
+C1 --> C2 : 1 → *
+C2 --> C3 : 1 → 1
+C3 --> C4 : 1 → *
+C3 --> C5 : 1 → *
+@enduml
